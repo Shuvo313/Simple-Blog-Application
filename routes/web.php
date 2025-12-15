@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
-| Public
+  Public
 */
 Route::get('/', [FrontendController::class,'home'])->name('home');
 Route::get('/blogs', [FrontendController::class,'index'])->name('blogs.index'); // optional full listing
@@ -16,7 +16,7 @@ Route::get('/blog/{slug}', [FrontendController::class,'show'])->name('blogs.show
 Route::get('/category/{slug}', [FrontendController::class,'category'])->name('categories.show');
 
 /*
-| Auth (custom)
+    Auth
 */
 Route::get('/register', [AuthController::class,'showRegister'])->name('register.show');
 Route::post('/register', [AuthController::class,'register'])->name('register');
@@ -25,7 +25,7 @@ Route::post('/login', [AuthController::class,'login'])->name('login');
 Route::post('/logout', [AuthController::class,'logout'])->name('logout');
 
 /*
-| Admin - group protected by middleware
+     Admin 
 */
 Route::prefix('admin')->name('admin.')->middleware(['auth.session','admin'])->group(function(){
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
