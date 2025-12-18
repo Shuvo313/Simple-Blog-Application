@@ -8,7 +8,7 @@ class Post extends Model
 {
     protected $fillable = ['title','category_id','user_id','content','status','published_at'];
 
-    protected $dates = ['published_at'];
+    protected $dates = ['published_date'];
 
     public function category()
     {
