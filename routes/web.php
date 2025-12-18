@@ -7,8 +7,8 @@ use App\Http\Controllers\Admin\PostController;
 
 // Public Routes
 Route::get('/', [FrontendController::class,'home']);
-Route::get('/blog/{slug}', [FrontendController::class,'show']);
-Route::get('/category/{slug}', [FrontendController::class,'category']);
+Route::get('/blog', [FrontendController::class,'show']);
+Route::get('/category', [FrontendController::class,'category']);
 
 // Auth Routes
 Route::get('/login',[AuthController::class,'loginForm'])->name('login');
